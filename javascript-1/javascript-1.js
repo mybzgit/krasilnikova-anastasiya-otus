@@ -11,18 +11,12 @@ const maxItemAssociation = (purchaseHistory) => {
     };
 
     let statistics = new Map();
-    for (let customerHistory of purchaseHistory) {
-        for (let productName of customerHistory) {
-
-            let existedProduct = statistics.get(productName);
-            if (existedProduct === undefined) 
-                statistics.set(productName, customerHistory);
-            else {
-                let productHistory = makeArrUnique([...existedProduct, ...customerHistory]);
-                statistics.set(productName, productHistory);
-            }
-        }
-    }
+    let products = makeArrUnique(purchaseHistory.flat());
+    products.forEach((productName) => {
+        let tempHistory = purchaseHistory.filter(customerHistory => customerHistory.includes(productName));
+        let productHistory = makeArrUnique(tempHistory.flat());
+        statistics.set(productName, productHistory);
+    });
 
     let maxHistory = [];
     for (let history of statistics.values()) {
@@ -35,18 +29,3 @@ const maxItemAssociation = (purchaseHistory) => {
     }
     return maxHistory;
 };
-
-const testResult = (history) => {
-    console.log("Input array:");
-    console.log(history);
-    console.log("Result:");
-    console.log(maxItemAssociation(history));
-};
-
-let history1 = [["a", "b"], ["a", "c"], ["d", "e"]];
-let history2 = [["a", "b"], ["a", "c"], ["d", "e"], ["d", "c"]];
-let history3 = [["d", "e"], ["d", "c"], ["a", "b"], ["a", "c"]];
-
-testResult(history1);
-testResult(history2);
-testResult(history3);
