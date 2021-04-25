@@ -1,14 +1,29 @@
 const { test, expect } = require("@jest/globals");
 const { getCurrentElementName, getNthChild, getPath } = require("./javascript-2");
 
-document.body.innerHTML = `<ul id="list">
+document.body.className = "my-body-class test-class";
+document.body.innerHTML = `<p></p>
+                           <p></p>
+                           <ul id="list">
+                                <li class="li-class">item1</li>
+                                <li class="li-class">item2</li>
+                                <li class="li-class">item3</li>
+                                <li class="li-class">item4</li>
+                           </ul>
+                           <p></p>
+                           <div id="d">
+                                <p id="par">paragraph</p>
+                           </div>
+                           <p></p>
+                           <p></p>
+                           <ul id="list">
                                 <li class="li-class">item1</li>
                                 <li class="li-class">item2</li>
                                 <li class="li-class">item3</li>
                                 <li class="li-class">item4</li>
                             </ul>
                             <div id="d">
-                                 <p id="par">paragraph</p>
+                                 <p>paragraph</p>
                             </div>`;
 
 describe("getNthChild", () => {
@@ -20,9 +35,9 @@ describe("getNthChild", () => {
         const firstLI = document.querySelector("li.li-class:last-child");
         expect(getNthChild(firstLI)).toBe(":last-child");
     });
-    test("should return ':nth-child(3)' for the third <li>", () => {
-        const thirdLI = document.querySelector("li.li-class:nth-child(3)");
-        expect(getNthChild(thirdLI)).toBe(":nth-child(3)");
+    test("should return ':nth-of-type(3)' for the third <li>", () => {
+        const thirdLI = document.querySelector("li.li-class:nth-of-type(3)");
+        expect(getNthChild(thirdLI)).toBe(":nth-of-type(3)");
     });
     test("should return an empty string for the <p>", () => {
         const p = document.querySelector("#d #par");
@@ -43,7 +58,7 @@ describe("getCurrentElementName", () => {
 
 describe("getPath", () => {
     test("should return the unique selector for the second <li>", () => {
-        const secondLI = document.querySelector("li.li-class:nth-child(2)");
+        const secondLI = document.querySelector("ul#list:nth-of-type(2) li.li-class:nth-of-type(2)");
         const result = document.querySelectorAll(getPath(secondLI));
         expect(result.length).toBe(1);
         expect(result[0]).toStrictEqual(secondLI);
