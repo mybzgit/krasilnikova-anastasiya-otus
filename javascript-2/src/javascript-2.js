@@ -1,8 +1,8 @@
 "use strict";
 
-const getCurrentElementName = ({ nodeName, id, className }) => {
+const getCurrentElementName = ({ nodeName, id, classList }) => {
     let nodeID = (id !== "") ? ('#' + id) : "";
-    let classes = (className !== "") ? ('.' + className.replace(" ", ".")) : "";
+    let classes = (classList.length !== 0) ? ('.' + [...classList].join('.')) : "";
     return nodeName.toLowerCase() + nodeID + classes;
 };
 const getNthChild = (e) => {
