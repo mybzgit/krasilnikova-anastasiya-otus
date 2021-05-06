@@ -5,7 +5,7 @@ customElements.define('my-tree', MyTree);
 customElements.define('my-leaf', MyLeaf);
 
 const createSlotChildren = (subtree) => {
-    let slot = document.createElement('DIV');
+    const slot = document.createElement('DIV');
     slot.setAttribute("slot", "children");
     subtree.appendChild(slot);
     return slot;
@@ -13,18 +13,18 @@ const createSlotChildren = (subtree) => {
 
 const createTreeElement = (node, level = 1) => {
     if (node.items !== undefined) {
-        let subtree = document.createElement("my-tree");
+        const subtree = document.createElement("my-tree");
         subtree.setAttribute("text", node.id);
         subtree.setAttribute("level", level++);
-        let childrenContainer = createSlotChildren(subtree);
+        const childrenContainer = createSlotChildren(subtree);
         for (const item of node.items) {
-            let child = createTreeElement(item, level);
+            const child = createTreeElement(item, level);
             childrenContainer.appendChild(child);
         }
         return subtree;
     }
     else {
-        let leaf = document.createElement("my-leaf");
+        const leaf = document.createElement("my-leaf");
         leaf.setAttribute("text", node.id);
         leaf.setAttribute("level", level);
         return leaf;

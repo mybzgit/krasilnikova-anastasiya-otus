@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "test": "jest"
+        "test": "jest --ci"
     },
     "devDependencies": {
         "@babel/core": "^7.13.16",
