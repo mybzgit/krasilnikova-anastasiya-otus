@@ -1,0 +1,10 @@
+{
+    "name": "nodejs-1",
+    "description": "",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "tree": "node src/tree.js"
+    },
+    "type": "module"
+}
