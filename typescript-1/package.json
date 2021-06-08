@@ -1,0 +1,13 @@
+{
+    "name": "typescript-1",
+    "description": "",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "ts-node": "^10.0.0",
+        "typescript": "^4.3.2"
+    }
+}
