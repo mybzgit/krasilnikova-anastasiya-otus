@@ -2,9 +2,9 @@ import { readdir } from 'fs/promises';
 
 async function readDirectory(dirName, result = { files: [], folders: [] }) {
 
-    let files = await readdir(dirName, { withFileTypes: true });
-    let promises = files.map(file => {
-        let filePath = `${dirName}/${file.name}`;
+    const files = await readdir(dirName, { withFileTypes: true });
+    const promises = files.map(file => {
+        const filePath = `${dirName}/${file.name}`;
         if (file.isDirectory()) {
             result.folders.push(filePath);
             return readDirectory(filePath, result);
@@ -17,7 +17,7 @@ async function readDirectory(dirName, result = { files: [], folders: [] }) {
     return result;
 }
 
-let dirName = process.argv[2];
+const dirName = process.argv[2];
 readDirectory(dirName).then(console.log);
 
 
