@@ -6,9 +6,6 @@ interface IProps {
 }
 
 export class AddRemoveCity extends Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-    }
 
     shouldComponentUpdate(nextProps: IProps){
         return (nextProps.presentInList != this.props.presentInList);
@@ -22,7 +19,6 @@ export class AddRemoveCity extends Component<IProps> {
         else
             return (<div></div>);
     }
-
     
     getButtonText(): string {
         if (this.props.presentInList == "yes")
@@ -36,5 +32,4 @@ export class AddRemoveCity extends Component<IProps> {
     onClick = () => {
         this.props.onCityStateChanged(this.props.presentInList == "no");
     }
-
 }

@@ -8,9 +8,6 @@ interface IProps {
 }
 
 export class FavoritesList extends Component<IProps> {
-    constructor(props: IProps) {
-        super(props);
-    }
 
     shouldComponentUpdate(nextProps: IProps){
         return (nextProps.cities.length !== this.props.cities.length || nextProps.selected !== this.props.selected);

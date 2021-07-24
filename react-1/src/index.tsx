@@ -6,15 +6,13 @@ import { CityCard } from './components/city-card'
 import { FavoritesList } from './components/favorites-list'
 import { AddRemoveCity } from './components/add-remove-city'
 
-interface IProps { }
-
 interface IState {
     cityName: string,
     citiesList: Array<string>
 }
 
-class App extends React.Component<IProps, IState> {
-    constructor(props: IProps) {
+class App extends React.Component<{}, IState> {
+    constructor(props: any) {
         super(props);
         this.state = {
             cityName: "",

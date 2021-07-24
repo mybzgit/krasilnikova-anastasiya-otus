@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react'
+import React, { ChangeEvent, PureComponent } from 'react'
 
 interface IProps {
   onCityChanged: any
@@ -28,7 +28,7 @@ export class SearchBox extends PureComponent<IProps, IState> {
       </div>);
   }
 
-  textChanged = (e: any) => {
+  textChanged = (e: ChangeEvent<HTMLInputElement>) => {
     this.setState({ cityName: e.target.value });
   }
 
