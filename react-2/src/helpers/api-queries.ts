@@ -1,0 +1,2 @@
+export const weatherApiRequest = "http://api.weatherapi.com/v1/forecast.json?key=bb22293635f54ba5962131939211307&q=cityName&days=3&aqi=no&alerts=no";
+export const weatherCurrentApiRequest = "http://api.weatherapi.com/v1/current.json?key=bb22293635f54ba5962131939211307&q=cityName&aqi=no";
