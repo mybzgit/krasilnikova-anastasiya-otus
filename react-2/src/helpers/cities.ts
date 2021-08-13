@@ -1,0 +1,5 @@
+const bigCities = [
+    "Abidjan", "Yamoussoukro", "Abu Dhabi", "Addis Ababa", "Amsterdam", "Ankara", "Baghdad", "Baku", "Bangkok", "Beijing", "Beirut", "Belgrade", "Berlin", "Bishkek", "Cape Town", "Pretoria", "Plymouth", "Bratislava", "Bridgetown", "Brussels", "Bucharest", "Budapest", "Buenos Aires", "Cairo", "Colombo", "Copenhagen", "Porto - Novo", "Dakar", "Damascus", "Douglas", "Dublin", "Dushanbe", "Gaborone", "Gibraltar", "Guatemala", "Hamilton", "Hanoi", "Havana", "Helsinki", "Islamabad", "Jakarta", "Jerusalem", "Juba", "Kuwait", "Kyiv", "Lima", "Lisbon", "London", "Luxembourg", "Madrid", "Manila", "Mexico", "Minsk", "Monaco", "Moscow", "Oslo", "Ottawa", "Panama", "Paris", "Philipsburg", "Prague", "Riga", "Rome", "San José", "Santiago", "Santo Domingo", "Seoul", "Singapore", "Stockholm", "Sukhumi", "Tallinn", "Tashkent", "Tbilisi", "Tokyo", "Tunis", "Victoria", "Vienna", "Vilnius", "Warsaw", "Washington", "Yerevan", "Zagreb"
+];
+
+export default bigCities;
