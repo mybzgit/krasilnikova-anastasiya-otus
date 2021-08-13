@@ -39,9 +39,9 @@ export const SearchBox = ({ onCityChanged }: IProps) => {
         <input className="form-control" onChange={textChanged} onFocus={onFocus} onBlur={onBlur}
           placeholder="Type a city name..." value={cityName}></input>
 
-        <div id="searchResults" className={visibility + " border bg-white position-absolute overflow-auto"} style={{ height: '300px', width: '300px' }}>
+        <div id="searchResults" className={visibility + " border bg-white position-absolute overflow-auto"} style={{ maxHeight: '300px', width: '300px' }}>
           {
-            cities.filter(city => city.toLowerCase().startsWith(cityName)).map(filteredName => (
+            cities.filter(city => city.toLowerCase().includes(cityName.toLowerCase())).map(filteredName => (
               <button type="button" className="btn btn-outline-success text-start" key={filteredName} onClick={() => setCityName(filteredName)}>
                 {filteredName}
               </button>
