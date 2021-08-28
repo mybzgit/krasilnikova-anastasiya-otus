@@ -1,0 +1,15 @@
+<div class="container">
+  <p>You can add <b>'{{fromLang}}'</b> words to your dictionary</p>
+  <div class="row">
+    <div class="col-8">
+      <input class="form-control" #inputadd type="text" placeholder="Add one or several words..." [(ngModel)]="searchString" />
+    </div>
+    <div class="col-4">
+      <button class="btn btn-warning w-100" type="button" (click)="add()">Add</button>
+    </div>  
+  </div>
+
+  <select class="form-control" multiple *ngIf="dictionaryService.getWordsCount() > 0">
+    <option *ngFor="let item of dictionaryService.getDictionary()">{{item[fromLang]}}</option>
+  </select>
+</div>
