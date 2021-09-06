@@ -1,0 +1,44 @@
+<div class="container">
+  <div *ngIf="wordsCount == -1">
+    <button class="btn btn-warning" type="button" (click)="start()">
+      Start
+    </button>
+  </div>
+  <div *ngIf="wordsCount > 0 && !finished">
+    <span class="time-left">Time left: {{ timeLeft | formatTime }}</span>
+    <span class="words-left">Words left: {{ wordsCount }}</span>
+    <div class="container">
+    <h1 class="alert-warning py-3">{{ randomWord[fromLang] | lowercase }}</h1>
+    <input
+      class="form-control"
+      type="text"
+      [formControl]="answer"
+      placeholder="Your answer..."
+    />
+  
+    <span [hidden]="answer.valid">
+      <span *ngIf="answer.errors && answer.errors.incorrect" class="incorrect-value">
+        This answer is wrong, try one more time
+      </span>   
+    </span>
+    
+    <button class="btn btn-warning" type="submit" (click)="check()">
+      Check
+    </button>
+  </div>
+    
+  </div>
+  <div>
+    <h3 *ngIf="wordsCount === 0" class="alert-warning">
+      Congratulations! You've successfully passed this exercise!
+    </h3>
+    <h3 *ngIf="finished" class="alert-warning">Time's up!</h3>
+    <button
+      *ngIf="finished || wordsCount === 0"
+      class="btn btn-warning"
+      type="button"
+      (click)="start()">
+      Restart
+    </button>
+  </div>
+</div>

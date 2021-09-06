@@ -1,0 +1,17 @@
+.ng-invalid {
+    border: 1px solid red;
+}
+
+.incorrect-value {
+    color: red;
+    float: left;
+}
+
+.time-left {
+    float: left;
+    padding-left: 10px;
+}
+
+.words-left {
+    float: right;
+}

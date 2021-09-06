@@ -1,0 +1,30 @@
+<div class="container">
+  <label for="lang" class="alert-warning text-start ps-3">Language:</label>
+  <select class="form-control" id="lang" (change)="onLangChange($event)">
+    <option
+      *ngFor="let lang of settingsService.languages"
+      [selected]="settingsService.currentLanguage == lang">
+      {{ lang }}
+    </option>
+  </select>
+  <label for="count" class="alert-warning text-start ps-3">Words:</label>
+  <select
+    class="form-control"
+    *ngIf="settingsService.wordsCount.length > 0"
+    id="count"
+    (change)="onWordsCountChange($event)">
+    <option
+      *ngFor="let count of settingsService.wordsCount"
+      [selected]="settingsService.currentWordsCount == count">
+      {{ count }}
+    </option>
+  </select>
+  <label for="time" class="alert-warning text-start ps-3">Minutes:</label>
+  <select class="form-control" id="time" (change)="onTimeChange($event)">
+    <option
+      *ngFor="let time of settingsService.timeValues"
+      [selected]="settingsService.currentTime == time">
+      {{ time }}
+    </option>
+  </select>
+</div>
