@@ -1,0 +1,26 @@
+::ng-deep .container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+::ng-deep input {
+    margin: 10px 0;
+}
+
+::ng-deep button {
+    margin: 10px 0;
+}
+
+::ng-deep a.nav-link.active {
+    font-weight: bold;
+    color: orange !important;
+}
+
+::ng-deep a.nav-link {
+    color: black !important;
+}
