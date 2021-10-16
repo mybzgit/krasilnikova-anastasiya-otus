@@ -1,0 +1,62 @@
+#app * {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+#app button, #app input, #app select {
+  padding: 5px;
+  background-color: white;
+  border: 2px solid #3f52e4;
+  border-radius: 5px;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#app input:focus, #app button:focus, #app select:focus {
+  border: 2px solid #fc5b9b;
+  outline: none;
+}
+
+#app a {
+  background-color: #3f52e4;
+  color: white;
+  padding: 10px 10px 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: unset;
+  width: 100%;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+  margin: 10px 5px 0 5px;
+}
+
+#app a.active-link {
+  background: #3f52e4;
+  background: linear-gradient(45deg, #3f52e4 0%, #fc5b9b 100%);
+}
+
+#app button {
+  background-color: #3f52e4;
+  color: white;
+  padding: 5px 10px !important;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.navigation {
+  padding-bottom: 5px;
+  display: inline-flex;
+  width: 100%;
+}
+
+.main-view {
+  border-top: 4px solid #3f52e4;
+  border-bottom: 5px solid #3f52e4;
+  height: 275px;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.3);
+}
