@@ -1,0 +1,33 @@
+.statistics .list {
+    overflow-y: auto;
+    height: 175px;
+    border-bottom: 2px solid #fc5b9b70;
+}
+
+.statistics .title {
+    padding: 10px 0;
+    font-size: 1.25em !important;
+    font-weight: bold;
+}
+
+.statistics .row {
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+    display: inline-flex;
+}
+
+.statistics .row:nth-last-of-type(2n + 1) {
+    background-color: #3f52e410;
+}
+
+.statistics .header {
+    font-weight: bold;
+    border-bottom: 2px solid #fc5b9b70;
+    border-top: 2px solid #fc5b9b70;
+    background-color: #fc5b9b20;
+}
+
+.statistics .col {
+    width: 100%;
+    padding: 5px 0 5px 5px;
+}
